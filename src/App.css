@@ -16,10 +16,6 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -35,4 +31,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+#search {
+  border-radius: .3rem;
+}
+#filtersGroup input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 5px;
+}
+#filtersGroup input:focus {
+  border: 1px solid #aaa;
+  box-shadow: 0 0 5px #aaa;
+}
+p{
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between
+}
+span{
+  padding-right: 10px;
+}
+.form-group label{
+  align-self: start;
+}
+a{
+  color: #61dafb;
+  text-decoration: none;
 }
