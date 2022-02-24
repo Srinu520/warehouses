@@ -18,6 +18,16 @@ function List(props) {
     const filtered = warehousesList.filter(warehouse => warehouse[name].toString().toLowerCase().includes(value.toLowerCase()))
     setWarehousesList(filtered)
   }
+  if(props.loading) {
+    return (
+      <div className='d-flex justify-content-center'>
+        <div className='spinner-border text-primary' role='status'>
+          <span className='sr-only'>Loading...</span>
+        </div>
+      </div>
+    )
+  }
+  
   if (warehousesList.length === 0) {
     return (
       <div style={{ paddingTop: '40vh' }} className='w-50 m-auto'>
@@ -28,7 +38,6 @@ function List(props) {
       </div>
     )
   }
-  console.log(warehouses, warehousesList)
   return (
     <div className='container pt-5'>
       <input id='search' type='search' placeholder='Search By Name' onChange={handleChange} />
@@ -64,6 +73,7 @@ function List(props) {
 const mapStateToProps = (state) => {
   return {
     warehouses: state.warehouses.warehouses,
+    loading: state.loading.global
   }
 }
 export default connect(mapStateToProps)(List)
